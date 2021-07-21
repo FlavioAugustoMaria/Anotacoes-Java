@@ -1,0 +1,222 @@
+=============
+04/09/2017
+=============
+
+*********************************
+ANOTAÇÕES SOBRE A IDE ECLIPSE
+*********************************
+
+O Eclipse é uma Integrated development environment(IDE). Diferente de uma RAD, que tem como objetivo desenvolver o mais rápido possível por meio 
+do "arrastar-e-soltar do mouse", onde montanhas de código são gerados em background. 
+Enquanto isso, uma IDE te auxilia no desenvolvimento, evitando se intrometer e fazer muita mágica.
+
+-----------------------
+CRIANDO UM PROJETO.
+-----------------------
+
+1.
+File >> New >> Project >> Java Project >> Next;
+
+ou
+
+1.
+Ctrl + N (atalho para novo projeto) >> Java Project >> Next;
+
+ou
+
+1.
+File >> New >> Other >> pasta Java >> Java Project >> Next;
+
+2.
+Informar um nome para o projeto em "Project name";
+
+3. 
+No quadro "JRE" selecionar a opção "Use an execution environment JRE";
+
+4.
+No quadro "Project Layout" selecionar a opção "Create separete folders for sources and class files";
+
+5.
+Finish;
+
+6.
+Vai abrir uma janela com o título "Open Associated Perspective", perguntando se quer abrir o projeto com a perspectiva de java,
+que é o modo de visualizar o projeto.
+Clicar em "Yes".
+O projeto está criado.
+
+-----------------------------------
+CRIANDO UMA CLASSE PARA O PROJETO.
+-----------------------------------
+
+Indo na pasta "src" do projeto e dando um Ctrl + N, é possível criar uma nova classe para o projeto.
+
+Vai abrir uma janela, onde é possível digitar o que estamos procurando,
+Neste caso, digitar "class", clicar na opção class.
+
+Informar o nome da classe, clicar no botão "finish".
+
+-----------------------------------
+CRIANDO GETTERS E SETTERS
+-----------------------------------
+
+Digitar "Ctrl + 3"
+Digitar na janela que vai abrir "GGAS" (Generate Getters And Setters), escolher a primeira opção que vai aparecer.
+
+Para cada atributo da classe, vai abrir uma opção para selecionar se deseja criar o Getter e Setter.
+Selecionar os desejados.
+Clicar em "Ok" e os getters e setter selecionados irão aparecer na classe onde foi digitado "Ctrl + 3".
+
+-----------------------------------
+SALVAR O PROJETO
+-----------------------------------
+
+Ctrl + s
+
+-----------------------------------
+AUTO COMPLETAR COMANDOS
+-----------------------------------
+
+Ctrl + Espaço
+
+syso + Ctrl + Espaço = System.out.println
+
+Criar uma variável para referenciar um objeto:
+
+Exemplo:
+new Conta(); + Ctrl + 1
+selecionar a opção "Assign statament to new local variable"
+e a variável "conta" é criada para referenciar o objeto "Conta".
+
+Ctrl + 1
+Com o cursor em cima de algum erro indicado pelo Eclipse, 
+o atalho Ctrl + 1 cria variáveis ou métodos que estamos usando no programa mas que ainda não foram criados.
+
+-----------------------------------
+EXECUTAR O PROGRAMA
+-----------------------------------
+
+Clicar no botão verde na toolbar, chamado "Run".
+
+O resultado aparece na parte inferior da janela.
+
+ou
+
+clicar com o botão direito na janela do método Main,
+Selecionar opção "Run As", "Java Aplication".
+
+ou
+
+CTRL + 3 >> digitar "Run"
+
+ou
+
+Atalho para executar o programa:
+Alt + Shift + X >> depois J
+
+-----------------------------------
+CRIAR CONSTRUTOR USANDO CAMPOS
+-----------------------------------
+
+Ir na classe onde deseja criar o construtor, posicionar o cursor na posição onde deseja gerar o construtor.
+Ctrl + 3 (para procurar uma opção no menu)
+escrever "gcuf" (Generate Constructor using Fields)
+escolher a opção "Comands"
+e então selecionar os campos que devem fazer parte do construtor (pode alterar a ordem dos campos se necessário).
+Clicar em "Ok".
+
+-----------------------------------
+ABRIR A ABA "CONSOLE"
+-----------------------------------
+
+A aba "console" é onde são exibidos os resultados da execução do programa.
+Caso ela seja fechada, é possível abrir novamente:
+
+Ctrl + 3
+escrever "console"
+escolher a primeira opção "Previous Choices"
+
+-----------------------------------
+FORMATAR (indentar) CÓDIGO
+-----------------------------------
+
+Ctrl + Shift + F
+
+-----------------------------------------------------------
+PESQUISAR PALAVRAS/MÉTODOS/ATRIBUTOS DENTRO DO ARQUIVO
+-----------------------------------------------------------
+
+Ctrl + O >> digitar o que deseja procurar
+
+-----------------------------------------------------------
+NAVEGAR ENTRE AS CLASSES ABERTAR NO SEU PROJETO
+-----------------------------------------------------------
+
+CTRL + PgUp
+CTRL + PgDown
+
+-----------------------------------------------------------
+IR ATÉ A DECLARAÇÃO DE UM MÉTODO/CLASSE/ATRIBUTO, ETC
+-----------------------------------------------------------
+
+CTRL + clicar sobre o que deseja consultar
+
+ou
+
+PF3 com o cursor sobre o nome do que deseja ver
+
+------------------------
+FECHAR ARQUIVOS/CLASSES
+------------------------
+
+Ctrl + W
+ou
+Ctrl + F4
+
+------------------------
+ABRIR ARQUIVOS/CLASSES
+------------------------
+
+Ctrl + Shift + T >> digitar o nome da classe que deseja abrir
+ou
+Ctrl + F4
+
+--------------------------------------
+EXPANDIR VIEW ATUAL PARA TELA CHEIA
+--------------------------------------
+
+CTRL + M
+
+(mesmo efeito de dar dois cliques no título da View)
+
+--------------------------------------
+EXIBIR TODOS OS ATALHOS POSSÍVEIS
+--------------------------------------
+
+CTRL + SHIFT + L
+
+--------------------------------------
+IMPORTAR CLASSES DE OUTRO PACOTE
+--------------------------------------
+
+Ctrl + Shift + O
+
+Importa automaticamente todas as classes necessárias.
+
+--------------------------------------
+EXIBIR UMA ABA / JANELA
+--------------------------------------
+
+Window > Show View > selecionar a aba/janela desejada
+
+--------------------------------------
+CONCATENAR CÓDIGO
+--------------------------------------
+
+CTRL + SHIFT + F
+
+--------------------------------------
+ALTERAR TAMANHO DA FONTE DO EDITOR
+--------------------------------------
+
+Window > Preferences > General > Appearence > Colors and Fonts > Java > Java Editor Text Font > Edit > selecionar tamanho da fonte > OK > Apply and Close
