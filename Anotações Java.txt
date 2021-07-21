@@ -1,0 +1,2325 @@
+Anotações Java.
+
+Downloads do google chrome:
+chrome://downloads/
+
+=============
+08/08/2017
+=============
+
+JVM - Java Virtual Machine.
+traduz o byte code, gerado pelo compilador java, em uma linguagem que pode ser interpretada por cada sistema operacional
+(windows, linux, Mac).
+
+**********************************************
+COMPILAR PROGRAMA NO PROMPT DE COMANDO (CMD)
+**********************************************
+
+Para compilar um programa java no prompt de comando:
+Salvar o programa com extensão ".java" na mesma pasta onde está o JDK (Java Development Kit), exemplo: "OlaMundo.java";
+No prompt de comando ir até o diretório onde estão o JDK e o programa.java, exemplo: "C:\Program Files (x86)\Java";
+Digitar no prompt: "javac OlaMundo.java" (o comando javac é para compilar, significa java compiler);
+Se o programa compilar com sucesso não será exibida mensagem no prompt de comando, mas será criado um objeto 
+Com o mesmo nome do programa (OlaMundo) e extensão ".class" na pasta onde está o programa (OlaMundo.class).
+Este objeto ".class" é o BYTE CODE que pode ser interpretado pela JVM (Java Virtual Machine) de qualquer sistema operacional.
+Para executar o BYTE CODE gerado durante a compilação do programa, digitar no prompt "java OlaMundo" (sem extensão),
+E o texto "Olá Java!" será exibido no prompt.
+
+**********************************************
+FORUM, ARTIGOS E TUTORIAIS JAVA
+**********************************************
+
+http://www.guj.com.br
+site com artigos, tutoriais e fóruns sobre java.
+
+
+****************************************
+COMANDOS JAVA:
+****************************************
+
+Comando para exibir texto na tela:
+
+1.
+System.out.println ("Olá Java!");
+
+----------------
+1.1. \n
+Pular / Quebrar linha de texto no comando "System.out.println"
+
+Exemplo:
+System.out.println("Olá Mundo. \n Esse é um teste de quebra de linha" + "\n" + "Quebrando mais uma linha");
+
+Resultado:
+Olá Mundo. 
+ Esse é um teste de quebra de linha
+Quebrando mais uma linha
+
+----------------
+1.2. \t
+Inserir tab (tabulação) no comando "System.out.println"
+
+Exemplo:
+int[] idade = {5, 36};
+String[] nome = {"Pedro", "Flavio"};
+
+for (int i = 0; i < nome.length; i++) {
+	System.out.println("Nome: " + "\t" + nome[i] + "\t" + "Idade: " + "\t" + idade[i]);
+}
+
+Resultado:
+Nome: 	Pedro	Idade: 	5
+Nome: 	Flavio	Idade: 	36
+----------------
+
+
+2.
+PRINTF - mostra quantas casas decimais conforme informado no comando.
+Para mudar de linha entre um comando "PRINTF" e outro, precisamos usar o "\n",
+pois, ao contrário do "PRINTLN", o "PRINTF" não faz essa quebra de linha sozinho.
+
+Sem quebra de linha:
+System.out.printf("O saldo é: %.2f", cc.getSaldo());
+
+Com quebra de linha:
+System.out.printf("O saldo é: %.2f\n", cc.getSaldo());
+
+e o resultado será:
+"O saldo é: 1000,00"
+
+alterando para termos 3 casas decimais:
+System.out.printf("O saldo é: %.3f", cc.getSaldo());
+"O saldo é: 1000,000"
+
+se o saldo acima fosse exibido pelo comando "PRINTLN", ficaria da seguinte forma:
+"O saldo é: 1000.0"
+
+
+****************************************
+CLASSES E MÉTODOS
+****************************************
+
+Classe (Contem Métodos)
+{
+//Método (Contem "Parâmetros", "Atributos" e "Instruções")
+//Parâmetro - valor que um Método espera receber:
+  Método (Parâmetro)
+  {
+//  Atributos:
+    int contador
+    string texto
+
+//  Instruções:
+    System.out.println ("Olá Mundo!");
+
+    {}
+  }
+}
+
+****************************************
+OPERADORES RELACIONAIS OU COMPARADORES
+****************************************
+
+>  (maior)
+<  (menor)
+>= (maior ou igual) 
+<= (menor ou igual) 
+== (igual)
+!= (diferente)
+
+
+***************************************
+TIPOS PRIMITIVOS DE VARIÁVEIS NO JAVA:
+***************************************
+
+CLASSIFICAÇÃO    OPERADOR    TAMANHO DE INFORMAÇÃO QUE SUPORTA
+
+Lógico           boolean     1 bit - pode possuir valores TRUE ou FALSE
+
+INTEIRO          byte        1 byte  - de -128 até +127
+                 short       2 bytes - de -32.768 até +32.767
+                 int         4 bytes - de -2.147.483.648 até +2.147.483.647
+                 long        8 bytes - de -2 exp63 até 2 exp63
+
+PONTO FLUTUANTE  float       4 bytes - com precisão simples
+                 double      8 bytes - com precisão dupla
+
+CARACTER         char        2 bytes - deve receber valor entre aspas simples ''
+
+
+
+int = Inteiro, utilizado para variáveis numéricas não muito grandes. 
+  Ex: int numeroPequeno = 32000;
+
+long = Inteiro, utilizado para variáveis numéricas muito grandes. 
+  Ex: long numneroGrande = 99999999999L;
+
+float = Utilizado para números com casas decimais não muito grandes (ocupa menos memória). 
+  Ex: float pi = 3.1415;
+
+double = Utilizado para números com casas decimais muito grandes. 
+  Ex: double pi = 3.1415999999999;
+
+boolean = para variáveis de valor TRUE (verdadeiro) ou FALSE (falso). 
+  Ex: boolean amigo = true; boolean inimigo = false; boolean inimigo = !amigo;
+  boolean é o único tipo de variável que não pode ser atribuída para outro tipo, mesmo utilizando o recurso "casting".
+
+char = variáveis de apenas uma letra. Deve ser declarado entre aspas simples ' '. 
+  Ex: char letra = 'M';
+
+----------
+
+TIPOS NÃO PRIMITIVOS DE VARIÁVEIS NO JAVA:
+
+String = variáveis de texto (primeira letra ("S") maiúsculo. 
+  Ex: String nome = "João da Silva";
+
+----------
+
+- Variáveis do tipo primitivo (int, float, char, etc), por padrão possuem valor zero/espaço/false sem ser necessário inicializá-las antes de utilizá-las.
+
+- Já as variáveis do tipo NÃO primitivo (String, Objetos, Arrays) precisam ser inicializada antes de usar,
+pois caso contrário ficam com valor nulo.
+
+****************************************
+PALAVRAS RESERVADAS
+****************************************
+
+Palavras reservadas devem sempre serem escritas tudo com letras minúsculas.
+Palavras que são reservadas:
+class, 
+public, 
+static, 
+continue,
+break,
+new,
+true,
+false,
+void (essa palavra reservada indica que um método não tem retorno, apenas executa instruções).
+
+************
+CamelCase
+************
+
+CamelCase - abordagem utilizada para padronizar nomes no java de: "esse nome de classe" vira "EsseNomeDeClasse"
+
+*************
+CASTING
+*************
+
+casting - recurso utilizado para atribuir valores entre variáveis de tipos diferentes.
+
+Exemplo:
+
+double livroJava8 = 60;
+int numeroInteiro = livroJava8; - Dessa forma não compila.
+int numeroInteiro = (int) livroJava8; - Dessa forma, usando o recurso casting "(int)", passa a compilar.
+
+**********************
+OPERADOR TERNÁRIO ?:
+**********************
+
+Com o operador ternário é possível fazer o seguinte comando:
+
+double valor = v1 > v2 ? 100 : 0;
+
+que significa o mesmo que o comando abaixo:
+
+double valor = 0;
+if (v1 > v2) {
+valor = 100;
+} else {
+valor = 0;
+}
+
+-----------------------------------------------------
+
+Para digitar Barra Invertida no teclado do notebook é Alt + 92 = "\"
+Para digitar "ç" é AltGr + < = "ç".
+
+Navegar no prompt de comando do windows (trocar de pasta ou diretório)
+Para RETORNAR uma pasta, por exemplo ir da pasta C:\Program Files\Java para a pasta C:\Program Files
+utilizar o comando "cd.."
+Para AVANÇAR uma pasta, por exemplo ir da pasta C:\Program Files para a pasta C:\Program Files\Java
+utilizar o comando "cd Java"
+
+-----------------------------------------------------
+
+=============
+09/08/2017
+=============
+
+Quando estava dando o seguinte erro pra executar o programa pelo prompt:
+"Erro Não foi possível localizar nem carregar a classe principal OlaMundo"
+Executei o programa no prompt da seguinte forma para funcionar:
+"java -cp . OlaMundo"
+depois disso encontrei no site "https://devjava.wordpress.com/tag/classpath/"
+a configuração correta da variável de sistema "CLASSPATH", que ficou da seguinte forma:
+".;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\htmlconverter.jar;%JAVA_HOME%\jre\lib;%JAVA_HOME%\jre\lib\rt.jar"
+depois de configurar corretamente a variável de sistema CLASSPATH, o programa passou a executar corretamente no prompt
+sem precisar utilizar o comando da forma como foi feito acima e descrito novamente abaixo:
+"java -cp . OlaMundo"
+para executar corretamente o programa no prompt bastou fazer o comando normal da seguinte forma:
+"java OlaMundo"
+
+ O javac é o compilador Java, e o java é o responsável por invocar a máquina virtual para interpretar o seu programa
+
+=============
+10/08/2017
+=============
+
+***************************************
+TIPOS PRIMITIVOS DE VARIÁVEIS NO JAVA:
+***************************************
+
+int = Inteiro, utilizado para variáveis numéricas não muito grandes. 
+  Ex: int numeroPequeno = 32000;
+
+long = Inteiro, utilizado para variáveis numéricas muito grandes. 
+  Ex: long numneroGrande = 99999999999L;
+
+float = Utilizado para números com casas decimais não muito grandes (ocupa menos memória). 
+  Ex: float pi = 3.1415;
+
+double = Utilizado para números com casas decimais muito grandes. 
+  Ex: double pi = 3.1415999999999;
+
+boolean = para variáveis de valor TRUE (verdadeiro) ou FALSE (falso). 
+  Ex: boolean amigo = true; boolean inimigo = false; boolean inimigo = !amigo;
+  boolean é o único tipo de variável que não pode ser atribuída para outro tipo, mesmo utilizando o recurso "casting".
+
+char = variáveis de apenas uma letra. Deve ser declarado entre aspas simples ' '. 
+  Ex: char letra = 'M';
+
+----------
+
+TIPOS NÃO PRIMITIVOS DE VARIÁVEIS NO JAVA:
+
+String = variáveis de texto (primeira letra ("S") maiúsculo. 
+  Ex: String nome = "João da Silva";
+
+----------
+
+- Variáveis do tipo primitivo (int, float, char, etc), por padrão possuem valor zero/espaço/false sem ser necessário inicializá-las antes de utilizá-las.
+
+- Já as variáveis do tipo NÃO primitivo (String, Objetos, Arrays) precisam ser inicializada antes de usar,
+pois caso contrário ficam com valor nulo.
+
+=============
+13/08/2017
+=============
+
+-----------------------------------------------------------
+
+************************
+COMENTÁRIOS NO CÓDIGO:
+************************
+
+		// linha de comentário
+
+		/* comentario iniciando em uma linha...
+		   e terminando em outra */
+-----------------------------------------------------------
+
+**************************************
+OPERADORES DE CÁLCULOS NUMÉRICOS:
+**************************************
+
++
+-
+/
+*
+% (chama-se "módulo", esse operador atribui o resultado DO RESTO de uma divisão para a variável que a esteja recebendo)
+
+**************************************
+FORMAS DE INCREMENTO DE UMA VARIÁVEL:
+**************************************
+
+contador = contador + 1;
+
+soma = soma + valorDoLivro;
+
+podemos ter o mesmo resultado dos comandos acima fazendo da seguinte forma:
+
+contador += 1;
+
+soma += valorDoLivro;
+
+Podemos utilizar essa técnica com os seguintes operadores:
+
++=
+-=
+*=
+/=
+%=
+
+Ainda podemos ter o mesmo resultado do incremento abaixo:
+
+contador += 1;
+
+fazendo da seguinte forma:
+
+contador ++;
+
+-----------------------------------------------------------
+
+=============
+13/08/2017
+=============
+
+-----------------------------------------------------------
+EXEMPLOS DE COMANDOS:
+
+*****************
+Laço While
+
+int idade = 15;
+while (idade < 18) {
+    System.out.println(idade);    
+    idade = idade + 1;
+}
+
+*****************
+Laço While com "Continue"
+
+Quando existe o comando "continue" em um laço "while", no momento em que o "continue" for executado, o laço while é interrompido e para de ser executado.
+E no exemplo abaixo, ao executar o continue, nenhuma instrução que existia abaixo do laço while foi executada:
+
+		while(i <= 5) {
+			if(i == 3) {
+				continue;
+			}
+			System.out.println("I: " + i);
+			i++;
+		}
+
+*****************
+Laço While com "break"
+
+Quando existe o comando "break" em um laço "while", no momento em que o "break" for executado, o laço while também é interrompido e para de ser executado.
+A diferença para o cotinue, é que, no exemplo abaixo, ao executar o break, as instruções que existiam abaixo do laço while foram executadas:
+
+		while(i <= 5) {
+			if(i == 3) {
+				continue;
+			}
+			System.out.println("I: " + i);
+			i++;
+		}
+
+
+
+*****************
+Laço For
+
+for (int i = 0; i < 10; i = i + 1) {
+    System.out.println("olá!");
+}
+
+---------------
+Laço For com "Continue"
+
+Quando existe o comando "continue" em um laço "for", no momento em que o "continue" for executado, é como se o laço for pulasse aquela execução,
+e continua no próximo índice.
+No Exemplo 1 abaixo, quando i2 for igual a 4, o i2 não será exibido na tela, mas para os demais valores de i2, inclusive 5 e 6, o i2 é exibido na tela.
+As instruções depois do laço "for" serão executadas normalmente.
+
+Exemplo 1:
+
+		for(int i2 = 0; i2 <=6; i2++){
+			if(i2 == 4){
+				continue;
+			}
+			System.out.println("I2: " + i2);
+		}
+
+
+Exemplo 2:
+
+for (int i = 0; i < 100; i++) {
+    if (i > 50 && i < 60) {
+        continue;
+    }
+    System.out.println(i);
+}
+
+---------------
+Laço For com "break"
+
+Quando existe o comando "break" em um laço "for", no momento em que o "break" for executado, o laço for é interrompido e para de ser executado.
+As instruções depois do laço "for" serão executadas normalmente.
+
+
+for (int i = x; i < y; i++) {
+    if (i % 19 == 0) {
+        System.out.println("Achei um número divisível por 19 entre x e y");
+        break;
+    }
+}
+
+*******************************************
+EXEMPLO DOS COMANDOS CONTINUE E BREAK:
+*******************************************
+
+**********
+CONTINUE:
+**********
+(Nesse caso não vai imprimir o "i" quando ele for = 7)
+
+for(int i = 0; i <= 10; i++) {
+if (i == 7) {
+continue;
+}
+System.out.println(i);
+}
+
+************
+BREAK:
+**********
+(Nesse caso vai interromper o laço "for" quando "i" for = 7)
+
+for(int i = 0; i <= 10; i++) {
+if (i == 7) {
+break;
+}
+System.out.println(i);
+}
+
+-----------------------------------------------------------
+
+=============
+17/08/2017
+=============
+
+***********************************
+INICIANDO COM ORIENTAÇÃO A OBJETO.
+***********************************
+
+CLASSE.
+é onde variáveis são criadas, sem ter valor;
+essas variáveis criadas na classe são os atributos de uma classe.
+por exemplo, a receita de um bolo. Podemos usar a mesma receita de um bolo pra fazer vários bolos.
+
+ATRIBUTO.
+sao as informacoes de uma classe. As variáveis.
+por exemplo, na receita de um bolo: Acucar, farinha, leite.
+
+MÉTODO.
+sao os comportamentos que existem em uma classe.
+por exemplo, mexer o bolo, assar o bolo.
+
+OBJETO.
+é onde os atributos (variáveis criadas na classe) passam a ter valor;
+por exemplo, o próprio bolo.
+
+INSTÂNCIA.
+é a chamada que a classe faz a um objeto para ele poder existir.
+instanciar um objeto, é acessar um objeto através de uma classe.
+
+INVOCAR UM METODO.
+acessar um metodo que fica dentro de um objeto.
+
+****************************
+EXEMPLO DE CLASSE E MÉTODO
+****************************
+
+public class Livro {
+	double valor;
+
+	void aplicaDesconto(double valor){
+		// no lugar de utilizar:
+		// valor -= valor * valor;
+		//utilizamos:
+		this.valor -= this.valor * valor;
+	}
+}
+
+
+No lugar de uma porcentagem , chamamos o parâmetro de
+valor , assim como o nome do atributo da classe Livro.
+Como o Java vai saber qual valor queremos atualizar? A
+resposta é: ele não vai.
+
+Nosso código vai subtrair e multiplicar o valor do parâmetro
+por ele mesmo, já que este tem um escopo menor do que o
+atributo da classe. Ou seja, mesmo com a ambiguidade neste
+caso, o código vai compilar, mas o valor considerado será o
+que possui o menor escopo.
+
+
+-----------------------------------------------------------
+
+VOID.
+Um método do tipo VOID, quando acionado, nao retorna nenhuma informação para quem o chamou.
+
+ARGUMENTO OU PARÂMETRO
+informação que é passada a um METODO quando ele é acionado.
+
+------------------------------------------------------------
+
+*******************************************************
+MODIFICADORES DE ACESSO (Public, Private e Protected)
+*******************************************************
+
+*******************************************************
+MÉTODOS E ATRIBUTOS PÚBLICOS, PRIVADOS e PROTECTED
+*******************************************************
+
+- ATRIBUTO PRIVADO.
+Um atributo privado só pode ser acessado (lido ou alterado) dentro da mesma classe.
+Ex:
+class Conta {
+	private double saldo;
+	private double limite;
+
+- ATRIBUTO PÚBLICO.
+Um atributo publico pode ser acessado (lido ou alterado) de qualquer classe.
+Quando um METODO ou ATRIBUTO nao possuem um MODIFICADOR DE ACESSO, ele fica num estado de visibilidade intermediário entre o private e o public, chamado PROTECTED.
+Ex:
+class Conta {
+	int numero;
+	Cliente titular;
+
+- ATRIBUTO/MÉTODO PROTECTED.
+Um atributo ou método PROTECTED está entre os atributos/métodos públicos e privados.
+Ele só pode ser acessado pela própria classe e por suas SUBCLASSES ou CLASSES FILHAS.
+As SUBCLASSES ou CLASSES FILHAS existem quando uma classe herda outra classe (conforme descrito no estudo sobre Heranças do dia 29/08/2017).
+
+Ex:
+    class Funcionario {
+        protected String nome;
+        protected int cpf;
+        protected double salario;
+
+    }
+
+
+    class Gerente extends Funcionario {
+        int senha;
+        int numeroDeFuncionariosGerenciados;
+
+    }
+
+
+- MÉTODO PRIVADO.
+Um método privado só pode ser acessado/invocado por métodos da mesma classe.
+Ex:
+	private double getSaldo() {
+		return this.saldo;
+	}
+
+- MÉTODO PÚBLICO.
+Um método público pode ser acessado por métodos de qualquer classe.
+Quando um METODO ou ATRIBUTO nao possuem um MODIFICADOR DE ACESSO, ele fica num estado de visibilidade intermediário entre o private e o public, chamado PROTECTED.
+
+Ex:
+	public double getSaldo() {
+		return this.saldo;
+	}
+
+OU
+	 double getSaldo() {
+		return this.saldo;
+	}
+
+-----------------------------------------
+MODIFICADORES DE ACESSO EM PACOTES
+-----------------------------------------
+
+PUBLIC
+pode ser acessado por qualquer classe de qualquer pacote.
+
+PROTECT
+pode ser acessado por quem esteja no próprio pacote ou por uma classe filha.
+
+DEFAULT
+Se não for definido um modificador, o atributo, classe ou construtor, pode ser acessado somente por quem esteja no mesmo pacote.
+
+PRIVATE
+somente pode ser acessado dentro da própria classe.
+
+
+------------------------------------------------------------
+
+*******************************************************
+MÉTODO QUE RETORNA UMA INFORMAÇÃO.
+*******************************************************
+
+    	double calculaGanhoAnual() {
+		return this.salario * 12;
+    	}
+
+-------------------
+
+	boolean contem(Funcionario f) {
+		//int i = 0;
+		for(int i = 0; i < this.empregados.length; i++){
+			if (this.empregados[i].nome == f.nome){
+				return true;
+			} 
+		}
+		return false;
+	}
+
+-------------------------
+
+	boolean saca(double quantidade) {
+		if (this.saldo < quantidade) {
+			return false;
+		} else {
+			this.saldo -= quantidade;
+			return true;
+		}
+	}
+
+------------------------------------------------------------
+
+************************************************
+ARRAY / VETOR
+*************************************************
+
+Cria uma matriz com várias posições para guardar diversas informações de um mesmo tipo.
+por exemplo, os alunos de uma classe.
+
+Ex:
+
+-----------------------------
+class Turma {
+	String serie;
+	String turno;
+	int[] notaAlunos;
+	int[] idade = {5, 36};
+	String[] nome = {"Pedro", "Flavio"};
+
+
+	void mostraNotaAlunos() {
+		for(int i=0; i < this.notaAlunos.length; i++) {
+			if(this.notaAlunos[i] == 0) {
+				continue;
+			}
+			System.out.println("Nota aluno " + i + ":" + this.notaAlunos[i]);
+		}
+	}
+}
+
+class ProgramaTurma {
+	public static void main(String[] args) {
+		Turma turma1 = new Turma();
+		turma1.notaAlunos = new int[10];
+
+		turma1.notaAlunos[1] = 5;
+		turma1.notaAlunos[2] = 6;
+		turma1.notaAlunos[3] = 7;
+
+		turma1.mostraNotaAlunos();
+
+	}
+}
+-----------------------------
+
+=============
+25/08/2017
+=============
+
+************************************************
+CONSTRUTORES
+************************************************
+
+Construtores são métodos criados nas classes, que possuem o nome exatamente igual ao da classe.
+Esses construtores são utilizados para dar um valor inicial aos atributos do objeto criado a partir da classe.
+O Construtor é invocado no momento da criação do objeto (na hora do new).
+
+Exemplo 1:
+
+class Conta {
+	int numero;
+	cliente titular;
+	double limite;
+
+	//CONSTRUTOR 1:
+	public Conta(int numero, double limite) {
+		this.numero = numero;
+		this.limite = limite;
+
+	}
+
+	//Podemos criar um construtor sem atributos.
+	//Nesse caso, o construtor seria praticamente igual ao construtor que o java fornece quando criamos um objeto apartir de uma classe
+	//que não tem construtor declarado na classe,
+	//ou seja, esse construtor não irá valorizar nenhum atributo do objeto.
+
+	//CONSTRUTOR 2:
+	public Conta() {}
+
+}
+`
+class TesteConstrutor {
+	public static void main(String[] args) {
+
+	//utilizando o construtor:
+	Conta joao = new Conta(123, 100.0)
+
+	}
+}
+
+Depois de criar o construtor em uma classe, que espera receber algum argumento, ao tentar criar um objeto do tipo dessa classe sem passar o argumento esperado 
+acontece um erro de compilação dizendo que o tipo de argumento esperado pelo construtor não está sendo informado. 
+Isso porque ao criarmos um construtor (com ou sem argumentos) na nossa classe, o construtor padrão que o java fornece sem esperar receber argumentos, 
+deixa de existir.
+
+
+------------------------------------------------------------
+************************************************
+ATRIBUTOS E METODOS STATIC (ESTATICOS)
+************************************************
+
+Quando declaramos um atributo como static, ele passa a não ser mais um atributo de cada objeto, e sim um atributo da classe, a informação fica guardada pela classe,
+não é mais individual para cada objeto.
+E todos os metodos de todas as classes passam a ver o mesmo valor no atributo STATIC.
+Métodos e atributos estáticos só podem acessar outros métodos e atributos estáticos da mesma classe,
+o que faz todo sentido já que dentro de um método estático não temos acesso à referência this, pois um método estático é chamado através da classe, e não de um objeto.
+
+Exemplo:
+
+class Conta {
+	int numero;
+	cliente titular;
+	double limite;
+
+	public static int numeroIncremental;
+
+	public Conta() {
+	this.numero = numeroIncremental;
+	numeroIncremental ++;
+	}
+}
+
+class TesteSatic {
+	public static void main(String[] args) {
+
+	Conta joao = new Conta();
+	System.out.println(joao.getNumero());
+
+	Conta jose = new Conta();
+	System.out.println(jose.getNumero());
+
+	//o resultado sera:
+	//1
+	//2
+
+	}
+}
+
+=============
+29/08/2017
+=============
+
+*************
+HERANÇA
+************
+
+Quando existem duas classes que possuem atributos e métodos em comum, porém uma das classe tenha também outros atributos e métodos que não sejam comum com a outra, 
+podemos fazer uma classe herdar os atributos e métodos da outra através da definição da classe como sendo do tipo "EXTENDS".
+
+no exemplo abaixo a classe "Gerente" herda os atributos e métodos da classe "Funcionario".
+
+Nesse caso podemos dizer que a classe "Funcionario" é a "SUPERCLASSE"
+e a classe "Gerente" é a "SUBCLASSE".
+
+Assim também como podemos chamar a classe "Funcionario" de "CLASSE MÃE"
+e a classe "Gerente" de "CLASSE FILHA".
+
+Uma classe pode ter várias filhas, mas pode ter apenas uma mãe, é a chamada herança simples do java.
+
+Uma classe filha também pode ser mãe de outra classe.
+
+Exemplo:
+
+    class Funcionario {
+        String nome;
+        String cpf;
+        double salario;
+
+    }
+
+
+    class Gerente extends Funcionario {
+        int senha;
+        int numeroDeFuncionariosGerenciados;
+    }
+
+
+************************
+REESCRITA DE MÉTODOS
+************************
+
+Ainda no assunto de Herança de classes, podemos reescrever um método de uma classe mãe na classe filha,
+para que o comportamento seja mais adequado na classe filha.
+
+No exemplo abaixo, o método "getBonificacao" da classe mãe Funcionário foi REESCRITO na classe filha Gerente
+para se adequar a necessidade da classe filha.
+
+EXEMPLO:
+
+    class Funcionario {
+        String nome;
+        String cpf;
+        double salario;
+
+        public double getBonificacao() {
+            return this.salario * 0.10;
+        }
+
+    }
+
+
+    class Gerente extends Funcionario {
+        int senha;
+        int numeroDeFuncionariosGerenciados;
+
+        public double getBonificacao() {
+            return this.salario * 0.15;
+        }
+    }
+
+- Para acessar o novo método que foi reescrito basta invocar o método com uma variável do tipo da classe filha, 
+nesse caso, do tipo Gerente.
+
+    Gerente gerente = new Gerente();
+    System.out.println(gerente.getBonificacao());
+
+- Caso seja necessário acessar na classe filha o método da classe mãe, pode ser feito utilizando a palavra "SUPER"
+na chamada do método, conforme abaixo:
+
+
+    class Gerente extends Funcionario {
+        int senha;
+        int numeroDeFuncionariosGerenciados;
+
+        public double getBonificacao() {
+            return super.getBonificacao() + 1000;
+        }
+         // ...
+    }
+
+
+************************
+POLIMORFISMO
+************************
+
+Polimorfismo é a capacidade de um objeto poder ser referenciado de várias formas.
+(cuidado, polimorfismo não quer dizer que o objeto fica se transformando, muito pelo contrário, um objeto nasce de um tipo e morre daquele tipo, 
+o que pode mudar é a maneira como nos referimos a ele).
+
+No exemplo abaixo, temos a classe Funcionario que é mae da classe Desenvolvedor,
+Mas podemos criar um objeto Desenvolvedor nos referenciando a ele como Funcionario.
+Nesse caso, ao instanciar o metodo "getBonus" que existe nas duas classes,
+O metodo acessado sera o da classe Desenvolvedor, pois é esse o tipo do objeto que temos.
+Ou seja, não importa como nos referenciamos a um objeto, o método que será invocado é sempre o que é dele.
+
+
+class Funcionario {
+	private String nome;
+	protected double salario;
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public double getBonus() {
+		System.out.println("getBonus Funcionario");
+		return this.salario * 0.2;
+	}
+
+}
+
+class Desenvolvedor extends Funcionario {
+	public double getBonus() {
+		System.out.println("getBonus Desenvolvedor");
+		return this.salario * 0.25;
+	}
+}
+
+
+class TestaFuncionario {
+	public static void main(String[] args) {
+
+	//mesmo criando um novo objeto Desenvolvedor e me referenciando
+	//a ele como Funcionario, ele sera sempre um Desenvolvedor
+	//e quando invocar o metodo "getBonus", vai utilizar o metodo
+	//da classe "Desenvolvedor"
+	Funcionario f1 = new Desenvolvedor();
+	f1.setSalario(800.0);
+	System.out.println(f1.getBonus());
+
+	}
+}
+
+=============
+04/09/2017
+=============
+
+*************
+ECLIPSE
+************
+
+O Eclipse é uma Integrated development environment(IDE). Diferente de uma RAD, que tem como objetivo desenvolver o mais rápido possível por meio 
+do "arrastar-e-soltar do mouse", onde montanhas de código são gerados em background. 
+Enquanto isso, uma IDE te auxilia no desenvolvimento, evitando se intrometer e fazer muita mágica.
+
+-----------------------
+CRIANDO UM PROJETO.
+-----------------------
+
+1.
+File >> New >> Project >> Java Project >> Next;
+
+ou
+
+1.
+Ctrl + N (atalho para novo projeto) >> Java Project >> Next;
+
+ou
+
+1.
+File >> New >> Other >> pasta Java >> Java Project >> Next;
+
+2.
+Informar um nome para o projeto em "Project name";
+
+3. 
+No quadro "JRE" selecionar a opção "Use an execution environment JRE";
+
+4.
+No quadro "Project Layout" selecionar a opção "Create separete folders for sources and class files";
+
+5.
+Finish;
+
+6.
+Vai abrir uma janela com o título "Open Associated Perspective", perguntando se quer abrir o projeto com a perspectiva de java,
+que é o modo de visualizar o projeto.
+Clicar em "Yes".
+O projeto está criado.
+
+-----------------------------------
+CRIANDO UMA CLASSE PARA O PROJETO.
+-----------------------------------
+
+Indo na pasta "src" do projeto e dando um Ctrl + N, é possível criar uma nova classe para o projeto.
+
+Vai abrir uma janela, onde é possível digitar o que estamos procurando,
+Neste caso, digitar "class", clicar na opção class.
+
+Informar o nome da classe, clicar no botão "finish".
+
+-----------------------------------
+CRIANDO GETTERS E SETTERS
+-----------------------------------
+
+Digitar "Ctrl + 3"
+Digitar na janela que vai abrir "GGAS" (Generate Getters And Setters), escolher a primeira opção que vai aparecer.
+
+Para cada atributo da classe, vai abrir uma opção para selecionar se deseja criar o Getter e Setter.
+Selecionar os desejados.
+Clicar em "Ok" e os getters e setter selecionados irão aparecer na classe onde foi digitado "Ctrl + 3".
+
+-----------------------------------
+SALVAR O PROJETO
+-----------------------------------
+
+Ctrl + s
+
+-----------------------------------
+AUTO COMPLETAR COMANDOS
+-----------------------------------
+
+Ctrl + Espaço
+
+syso + Ctrl + Espaço = System.out.println
+
+Criar uma variável para referenciar um objeto:
+
+Exemplo:
+new Conta(); + Ctrl + 1
+selecionar a opção "Assign statament to new local variable"
+e a variável "conta" é criada para referenciar o objeto "Conta".
+
+Ctrl + 1
+Com o cursor em cima de algum erro indicado pelo Eclipse, 
+o atalho Ctrl + 1 cria variáveis ou métodos que estamos usando no programa mas que ainda não foram criados.
+
+-----------------------------------
+EXECUTAR O PROGRAMA
+-----------------------------------
+
+Clicar no botão verde na toolbar, chamado "Run".
+
+O resultado aparece na parte inferior da janela.
+
+ou
+
+clicar com o botão direito na janela do método Main,
+Selecionar opção "Run As", "Java Aplication".
+
+ou
+
+CTRL + 3 >> digitar "Run"
+
+ou
+
+Atalho para executar o programa:
+Alt + Shift + X >> depois J
+
+-----------------------------------
+CRIAR CONSTRUTOR USANDO CAMPOS
+-----------------------------------
+
+Ir na classe onde deseja criar o construtor, posicionar o cursor na posição onde deseja gerar o construtor.
+Ctrl + 3 (para procurar uma opção no menu)
+escrever "gcuf" (Generate Constructor using Fields)
+escolher a opção "Comands"
+e então selecionar os campos que devem fazer parte do construtor (pode alterar a ordem dos campos se necessário).
+Clicar em "Ok".
+
+-----------------------------------
+ABRIR A ABA "CONSOLE"
+-----------------------------------
+
+A aba "console" é onde são exibidos os resultados da execução do programa.
+Caso ela seja fechada, é possível abrir novamente:
+
+Ctrl + 3
+escrever "console"
+escolher a primeira opção "Previous Choices"
+
+-----------------------------------
+FORMATAR (indentar) CÓDIGO
+-----------------------------------
+
+Ctrl + Shift + F
+
+-----------------------------------------------------------
+PESQUISAR PALAVRAS/MÉTODOS/ATRIBUTOS DENTRO DO ARQUIVO
+-----------------------------------------------------------
+
+Ctrl + O >> digitar o que deseja procurar
+
+-----------------------------------------------------------
+NAVEGAR ENTRE AS CLASSES ABERTAR NO SEU PROJETO
+-----------------------------------------------------------
+
+CTRL + PgUp
+CTRL + PgDown
+
+-----------------------------------------------------------
+IR ATÉ A DECLARAÇÃO DE UM MÉTODO/CLASSE/ATRIBUTO, ETC
+-----------------------------------------------------------
+
+CTRL + clicar sobre o que deseja consultar
+
+ou
+
+PF3 com o cursor sobre o nome do que deseja ver
+
+------------------------
+FECHAR ARQUIVOS/CLASSES
+------------------------
+
+Ctrl + W
+ou
+Ctrl + F4
+
+------------------------
+ABRIR ARQUIVOS/CLASSES
+------------------------
+
+Ctrl + Shift + T >> digitar o nome da classe que deseja abrir
+ou
+Ctrl + F4
+
+--------------------------------------
+EXPANDIR VIEW ATUAL PARA TELA CHEIA
+--------------------------------------
+
+CTRL + M
+
+(mesmo efeito de dar dois cliques no título da View)
+
+--------------------------------------
+EXIBIR TODOS OS ATALHOS POSSÍVEIS
+--------------------------------------
+
+CTRL + SHIFT + L
+
+--------------------------------------
+IMPORTAR CLASSES DE OUTRO PACOTE
+--------------------------------------
+
+Ctrl + Shift + O
+
+Importa automaticamente todas as classes necessárias.
+
+
+=============
+05/09/2017
+=============
+
+*******************
+CLASSE ABSTRATA
+*******************
+
+Para declarar uma classe como ABSTRATA, deve-se usar a palavra "ABSTRACT", da seguinte forma:
+
+Exeplo:
+
+public abstract class Livro {
+}
+
+Uma CLASSE ABSTRATA não pode ser instanciada (criar um objeto do tipo dessa classe),
+ou seja, se tivermos uma classe abstrata do tipo "LIVRO", não podemos fazer fazer o seguinte (instanciar um objeto do tipo Livro):
+
+Exemplo:
+Livro livro = new Livro();
+
+A classe ABSTRATA serve para definir algumas regras obrigatórias para todas as suas classe filhas.
+Ela não pode mais ser instanciada, e passa a servir exclusivamente para Herança e Polimorfismo.
+
+Mas ainda podemos criar um objeto de outro tipo, nos referenciando a ele como o tipo da classe Abstrata (classe Livro),
+Da seguinte forma:
+
+Exemplo:
+Livro livro = new LivroFisico();
+
+*******************
+MÉTODO ABSTRATO
+*******************
+
+Para declarar um método como ABSTRATO, deve-se adicionar o modificador "abstract" em sua declaração
+e remover todo o corpo de instruções do método, conforme feito com os dois métodos abaixo da classe Conta.
+
+Exemplo:
+
+public abstract class Conta {
+
+  public abstract boolean aplicaDescontoDe(double porcentagem);
+
+  public abstract double getBonus();
+
+}
+
+Então na classe filha esse método abstrato obrigatoriamente deve ser reescrito.
+Para ajudar a reconhecer que o método reescrito é um método abstrato da classe mãe
+utiliza-se a anotação "@Override" acima do método, conforme exemplo abaixo:
+
+Exemplo:
+
+class ContaPoupanca extends Conta {
+	@Override
+	public void atualiza(double taxa) {
+		this.saldo += this.saldo * (taxa * 3);
+	}
+}
+
+Caso não queira reescrever o método abstrato em alguma das classes filhas,
+uma solução para fazer com que ela compile, é transformando também a classe filha em abstrata,
+dessa forma, a obrigação de reescrever o método abstrato passa a ser das classes filhas dessa segunda classe abstrata,
+e assim por diante.
+
+
+*************************************
+ALGUMAS REGRAS DE CLASSES ABSTRATAS
+*************************************
+
+- Apenas classes abstratas podem ter métodos abstratos.
+
+- A partir do momento em que um método passa a ser abstrato, todas as classes NÃO ABSTRATAS filhas dessa classe abstrata,
+são obrigadas a escrever esse método.
+
+- Uma classe pode ser abstrata sem ter nenhum método
+abstrato. A partir do momento em que ela se tornar
+abstrata, nenhum código poderá mais instanciá-la.
+
+- Se você declarar um método abstrato, precisará tornar
+a classe abstrata também! Você não pode ter métodos
+abstratos em uma classe que não é abstrata.
+
+- Uma classe abstrata pode ter métodos abstratos e não abstratos (concretos).
+
+- Toda classe filha (subclasse) precisa implementar os
+métodos abstratos da classe pai (superclasse). A não
+ser que ela também seja abstrata.
+
+
+
+=============
+07/09/2017
+=============
+
+*--------------------------------------------------------------------------------*
+INTERFACES
+*--------------------------------------------------------------------------------*
+
+INTERFACE é outra forma para se tirar proveito de todos os
+benefícios do polimorfismo sem ter de acoplar tanto as suas classes
+com vários níveis de HERANÇA. Você pode estabelecer um fator em
+comum entre as classes, criando uma espécie de contrato, que é a INTERFACE.
+
+Uma INTERFACE se parece bastante com uma classe abstrata que tenha apenas métodos abstratos, 
+mas no lugar de declará-la como uma classe, utilizamos a palavra reservada "interface".
+
+Exemplo:
+
+public interface Produto {
+  public abstract double getValor();
+
+  //ou também pode ser:
+
+  double getValor();
+}
+
+Uma interface não pode ter atributos e, até a versão 1.7 da
+linguagem, também não pode ter nenhum método concreto, ou seja, com implementação.
+
+Podemos agora fazer com que todas as classes que idealizam
+produtos de nossa livraria assinem o contrato (ou interface) Produto . Para fazer
+isso, basta adicionar a palavra-chave "implements" seguida do
+nome da interface que deve ser implementada na declaração das classes.
+
+Exemplo:
+
+public abstract class Livro implements Produto {
+// atributos e métodos omitidos
+}
+
+public class Revista implements Produto {
+// atributos e métodos omitidos
+}
+
+Como todos que implementam uma interface podem ser referenciados por este tipo, 
+podemos usar polimorfismo com interfaces. 
+
+Exemplo:
+
+Podemos referenciar um (objeto) "Livro" ou "Revista" (declarados nos exemplos acima), 
+como sendo um Produto, o que na verdade eles são também.
+
+-------------------
+
+Classes podem implementar mais de uma interface.
+Abaixo vamos criar mais uma interface chamada "Promocional"
+e depois vamos implementar em uma classe as interfaces "Produto" e "Promocional".
+
+Exemplo:
+
+//criando outra interface (Promocional)
+public interface Promocional {
+  boolean aplicaDescontoDe(double porcentagem);
+}
+
+//implementando a interface Promocional para a classe LivroFisico
+public class LivroFisico extends Livro implements Promocional {
+// atributos e métodos omitidos
+}
+
+//implementando as interfaces Produto e Promocional para a classe Revista
+public class Revista implements Produto, Promocional {
+// atributos e métodos omitidos
+}
+
+------------------------------------------
+IMPORTANTE:
+
+A grande vantagem de trabalhar com interfaces é que apenas as
+classes que a implementam são obrigadas a implementar seus métodos.
+------------------------------------------
+
+DIFERENÇAS ENTRE HERANÇA E INTERFACES
+
+Na HERANÇA as classes ganham:
+-Atributos
+-Métodos 
+-Implementações
+
+Na Interface as classes ganham:
+-Apenas a certeza de que o método existe e será utilizado.
+
+
+>>> o uso de interfaces em vez de herança é amplamente aconselhado.
+
+------------------------------------------
+
+
+=============
+11/09/2017
+=============
+
+*--------------------------------------------------------------------------------*
+EXCEÇÕES E CONTROLES DE ERROS
+*--------------------------------------------------------------------------------*
+
+Quando acontecer uma Exceção que não esteja sendo tratada,
+o programa abenda no ponto da exceção, exibe mensagem, para de executar o método onde a exceção ocorreu,
+volta ao método chamador, e vai saindo de todos os métodos chamadores procurando por um tratamento da exceção,
+caso não encontre esse tratamento, o programa para de executar.
+Caso encontre um tratamento do erro, a partir do tratamento o fluxo de execução volta ao processamento normal.
+
+------------------
+getMessage()
+------------------
+
+Através da função "getMessage()" é possível obter a mensagem de erro retornada por uma classe de tratamento de exceção.
+Exemplo:
+
+----------------------
+
+		try {
+			joao.deposita(-50.0);
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+		}
+
+
+------------------
+RuntimeException
+-----------------
+
+Exemplo:
+
+	public void saca(double valor) {
+		if (valor <= this.saldo) {
+			this.saldo -= valor;
+		} else {
+			throw new RuntimeException("Saldo insuficiente");
+		}
+	}
+
+-------------------------
+IllegalArgumentException
+-------------------------
+
+	public void deposita(double valor) {
+		if (valor < 0) {
+			throw new IllegalArgumentException("Valor para depósito inválido");
+		} else {
+			this.saldo += valor;
+		}
+	}
+
+----------------------
+
+		try {
+			joao.deposita(-50.0);
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+		}
+
+-------------------------
+TRATAMENTO DE EXCEÇÃO
+-------------------------
+
+É possível fazer o tratamento de uma exceção para que quando ela ocorra
+o programa continua executando apartir do ponto da exceção, sem ser interrompido.
+isso é feito através do comando:
+
+"TRY CATCH"
+
+Exemplo:
+
+int[] nums = new int[5];
+for(int i = 0; i < 6; i++) {
+  try {
+      nums [i] = i * 2;
+  } catch(ArrayIndexOutOfBoundsExceptin e) {
+    System.out.println("Problema");
+  }
+}
+
+
+=============
+14/09/2017
+=============
+
+*--------------------------------------------------------------------------------*
+PACOTES
+*--------------------------------------------------------------------------------*
+
+Os pacotes (criados no Eclipse), servem para agrupar classes de um projeto que sejam do mesmo tipo, 
+ou que tenham funções parecidas.
+Se necessário, pode-se criar classes com mesmo nome em pacotes diferentes, para um mesmo projeto.
+
+Para criar um pacote no Eclipse:
+
+Selecionar a pasta "SRC" do projeto desejado.
+Ctrl + N
+Package
+dar um nome ao pacote (Exemplo: "br.com.caelum.funcionario.modelo") (por padrão, os nomes de pacotes só possuem letras minúsculas)
+Finish (o pacote será criado)
+depois disso arrastar as classes desejadas para o pacote.
+
+Ao passar uma classe para um pacote que não seja o padrão criado pelo Eclipse,
+A primeira linha da classe vai trazer a informação de qual pacote ela faz parte, desta forma:
+
+package br.com.caelum.funcionario.modelo;
+
+para uma classe poder ser acessada em outro pacote, ela deve ser do tipo "PUBLIC" (Exemplo: public class Cliente),
+Caso contrário outras classes não conseguirão acessá-la ou importá-la.
+
+Para uma classe ser utilizada em uma classe MAIN que esteja em outro pacote, ela deve ser importada,
+através do comando (palavra chave) "IMPORT", da seguinte forma:
+
+Exemplo:
+import br.com.caelum.funcionario.modelo.Desenvolvedor;
+
+Atalho no eclipse para importar classes que estejam sendo utilizadas:
+
+Ctrl + Shift + O
+
+Importa automaticamente todas as classes necessárias.
+
+JAVA.LANG é um pacote importado automaticamente para o projeto,
+esse pacote contem as classes padrão do java, como a classe String, por exemplo.
+
+-----------------------------------------
+MODIFICADORES DE ACESSO EM PACOTES
+-----------------------------------------
+
+PUBLIC
+pode ser acessado por qualquer classe de qualquer pacote.
+Classes, atributos, construtores e métodos podem ser public.
+
+PROTECTED
+pode ser acessado por quem esteja no próprio pacote ou por uma classe filha.
+Somente atributos, construtores e métodos podem ser protected
+
+DEFAULT
+Se não for definido um modificador, o atributo, classe ou construtor, pode ser acessado somente por quem esteja no mesmo pacote.
+Classes, atributos, construtores e métodos podem não ter um modificador informado.
+
+PRIVATE
+somente pode ser acessado dentro da própria classe.
+Classes não podem ser private, mas atributos, construtores e métodos sim.
+
+*--------------------------------------------------------------------------------*
+JAR E JAVADOC
+*--------------------------------------------------------------------------------*
+
+------------
+JAR
+------------
+
+Depois que o programa estiver pronto, para enviá-lo para o cliente por exemplo,
+basta zipar todas as classes criadas, renomear o arquivo zipado para ".JAR" (Java ARchive ou Arquivo Java).
+Esse arquivo terá uma classe com método Main que será a principal, 
+ela será escolhida durante o processo de geração do ".JAR" pelo Eclipse.
+Ao ser executado o documento .JAR, essa classe principal é a que será executada.
+
+------------
+JAVADOC
+------------
+
+Para acessar a documentação dos intens do java, acessar o link:
+https://docs.oracle.com/javase/8/docs/api/
+
+No Eclipse, para documentar ou explicar o funcionamento de um método,
+Basta ir na linha acima do início do método, digitar "/**"
+que o Eclipse gera automaticamente um bloco de comentário com o nome de cada atributo utilizado no método.
+
+Depois disso ir no menu:
+Project >> Generate Javadoc
+
+para gerar a documentação do projeto.
+
+
+*--------------------------------------------------------------------------------*
+PACOTE JAVA.LANG
+*--------------------------------------------------------------------------------*
+
+O pacote JAVA.LANG contem algumas classes padrão do java, como por exemplo:
+
+String
+System.out.println
+
+
+-------------------
+java.lang.Object
+-------------------
+
+Toda classe deve herdar de outra classe.
+Quando criamos uma classe e não declaramos que ela herda de outra,
+por padrão ela herda da classe "OBJECT".
+
+Todas as classes, sem exceção, herdam de "Object".
+
+Podemos também afirmar que qualquer objeto em Java é um Object, podendo ser referenciado como tal.
+
+
+-------------------
+REPLACEALL
+-------------------
+
+trocar / alterar caracteres por outros.
+
+Exemplo:
+		String s = "fj11";
+		String s1 = s.replaceAll("1", "2");
+		s.replaceAll("1", "2");
+		System.out.println("s = " + s);
+		System.out.println("s1 = " + s1);
+
+A saída será:
+
+s = fj11
+s1 = fj22
+
+
+-------------------
+FUNÇÕES DE STRING
+-------------------
+
+Como fazer para saber se uma String se encontra dentro de outra? 
+R: "contains": devolve true se a String contem a sequência de caracteres passada.
+
+E para tirar os espaços em branco das pontas de uma String? 
+R: "trim": devolve uma nova String sem caracteres brancos do início e do fim.
+
+E para saber se uma String está vazia? 
+R: "isEmpty": devolve true se a String está vazia. Surgiu no Java 6.
+
+E para saber quantos caracteres tem uma String?
+R: "length": devolve a quantidade de caracteres da String.
+
+-------------------
+EQUALS
+-------------------
+
+Para comparar objetos, mesmo que sejam do mesmo tipo e tenham as mesmas informações,
+Se a comparação for feita utilizando "==", eles serão considerados diferentes, 
+pois essa comparação aponta para endereço de memória, e cada objeto está em um endereço diferente.
+
+Então para comparar objetos deve-se utilizar o "EQUALS".
+Exemplo:
+
+		Integer x1 = new Integer(10);
+		Integer x2 = new Integer(10);
+
+		if (x1 == x2) {
+			System.out.println("igual");
+		} else {
+			System.out.println("diferente");
+		}
+
+O resultado será:  "diferente"
+
+
+Exemplo:
+
+		Integer x1 = new Integer(10);
+		Integer x2 = new Integer(10);
+
+		if (x1.equals(x2)) {
+			System.out.println("igual");
+		} else {
+			System.out.println("diferente");
+		}
+
+O resultado será:  "igual"
+
+
+=============
+25/09/2017
+=============
+
+*--------------------------------------------------------------------------------*
+PACOTE JAVA.IO
+*--------------------------------------------------------------------------------*
+
+------------------------------------------------
+Scanner
+------------------------------------------------
+
+SCANNER é um comando utilizado para ler informações de um arquivo ou da console do eclipse.
+
+Exemplo:
+
+//cria um objeto do tipo Scanner para ler dados da console
+Scanner s = new Scanner(System.in);
+
+
+//Lê informações do arquivo "entrada.txt" 
+Scanner s = new Scanner(new FileInputStream("entrada.txt"));
+
+
+------------------------------------------------
+PrintStream
+------------------------------------------------
+
+PRINTSTREAM é um comando utilizado para gravar em um arquivo as informações que foram lidas de um arquivo ou console do eclipse.
+
+Exemplo:
+
+
+//cria um objeto do tipo PrintStream para gravar informações no arquivo "arquivo.txt".
+PrintStream ps = new PrintStream("arquivo.txt");
+
+------------------------------------------------
+hasNextLine
+------------------------------------------------
+
+verifica se a próxima linha do arquivo ou console a ser lida tem informação,
+se não tiver mais linhas a serem lidas retorna false.
+
+------------------------------------------------
+println
+------------------------------------------------
+
+grava no arquivo especificado na criação do objeto "PrintStream" a informação lida do console ou arquivo.
+
+Exemplo de um programa para ler informações do console e gravar em um arquivo "arquivo.txt":
+
+//------INÍCIO PROGRAMA------
+
+//Lê informações do console
+//Scanner s = new Scanner(System.in);
+
+//Lê informações do arquivo "entrada.txt" 
+Scanner s = new Scanner(new FileInputStream("entrada.txt"));
+
+//cria objeto do tipo "PrintStream" para gravar no arquivo "arquivo.txt" as informações lidas
+PrintStream ps = new PrintStream("arquivo.txt");
+
+//enquanto tiver informações a serem lidas na entrada		
+while (s.hasNextLine()) {
+//grava no arquivo especificado na criação do objeto "ps" e lê a próxima linha da entrada.
+  ps.println(s.nextLine());
+}
+
+//fecha os arquivos de entrada e saída
+ps.close();
+s.close();
+
+
+//------FIM PROGRAMA------
+
+
+------------------------------------------------
+InputStream, InputStreamReader e BufferedReader
+------------------------------------------------
+
+- FileInputStream
+Le um byte de um arquivo.
+Deve-se passar o nome do arquivo de onde fazer a leitura no construtor do objeto.
+
+
+- System.in
+Faz leitura de informações do console.
+
+Exemplo:
+
+java.io.InputStream is = System.in;
+InputStreamReader isr = new InputStreamReader(is);
+BufferedReader br = new BufferedReader(isr);
+
+- FileInputStream
+Faz leitura de informações de um arquivo.
+
+Exemplo:
+
+java.io.InputStream is = new FileInputStream("arquivo.txt");
+InputStreamReader isr = new InputStreamReader(is);
+BufferedReader br = new BufferedReader(isr);
+
+
+=============
+26/09/2017
+=============
+
+*--------------------------------------------------------------------------------*
+COLLECTIONS FRAMEWORK
+*--------------------------------------------------------------------------------*
+
+------------------------------------------------
+Listas
+------------------------------------------------
+
+- Uma lista é uma coleção que permite elementos duplicados e mantém uma ordenação específica entre os elementos;
+- Somente um elemento por vez pode ser inserido ou retirado da lista;
+- Listas Ligadas: Cada elemento tem ligação com o Próximo elemento da lista;
+- Listas Duplamente Ligadas: Cada elemento tem ligação com o Anterior e Próximo elemento da lista;
+
+------------------------------------------------
+Pilhas
+------------------------------------------------
+
+- Pilha é uma estrutura de dados que serve como uma coleção de elementos, permitindo o acesso a somente um item de dados armazenado, ou seja,
+somente um item por vez pode ser lido ou removido.
+
+Existem dois tipos de Pilhas:
+- LIFO (ou UEPS) - Last in First Out (ou Último que Entra Primeiro que Sai).
+  O primeiro elemento a ser retirado é o último que foi inserido.
+
+- FIFO (ou PEPS) - First in First Out (ou Primeiro que Entra Primeiro que Sai).
+  O primeiro elemento a ser retirado é o primeiro que foi inserido.
+
+------------------------------------------------
+Filas
+------------------------------------------------
+
+Estrutura de dados do tipo Fila, permite inclusão e remoção de elementos sejeitos a seguinte regra:
+O elemento removido é o que está na estrutura a mais tempo, ou seja, o primeiro elemento inserido é o primeiro a ser removido, seguindo o conceito FIFO.
+
+------------------------------------------------
+ArrayList
+------------------------------------------------
+
+guarda uma lista de informações, podendo ser de tipos diferentes (String, int, objetos, etc).
+Mas não é uma boa idéia criar uma lista para guardar informações de tipos diferentes,
+Guarde sempre informações do mesmo tipo em uma lista.
+Não precisa informar o nome da lista. ela aumenta conforme forem sendo inseridas informações.
+
+Exemplo:
+
+    //cria uma ArrayList chamada "lista"
+    List lista = new ArrayList();
+
+    //adiciona informações para a ArrayList
+    lista.add("Manoel");
+    lista.add("Joaquim");
+    lista.add("Maria");
+
+------------------------------------------------
+Generics
+------------------------------------------------
+
+Generics é um recurso utilizado para restringir o tipo de informações inseridas em uma List.
+
+Exemplo:
+
+    //Generics = <ContaCorrente>
+    List<ContaCorrente> contas = new ArrayList<ContaCorrente>();
+    //o Generics pode ser feito também na forma como na linha abaixo:
+    //List<ContaCorrente> contas = new ArrayList<>();
+    contas.add(c1);
+    contas.add(c3);
+
+Nesse exemplo, a List "contas" somente pode receber informações do tipo "ContaCorrente",
+se tentarmos armazenar qualquer outro tipo de informação nela, o programa não compila.
+
+------------------------------------------------
+size()
+------------------------------------------------
+
+size() é um método utilizado para saber o tamanho da ArrayList.
+
+Exemplo:
+
+    ContaCorrente c1 = new ContaCorrente();
+    c1.deposita(100);
+
+    ContaCorrente c2 = new ContaCorrente();
+    c2.deposita(200);
+
+    List contas = new ArrayList();
+    contas.add(c1);
+    contas.add(c2);
+
+    System.out.println(contas.size());
+
+------------------------------------------------
+get(int)
+------------------------------------------------
+
+é um método que recebe como argumento o índice do elemento que se quer acessar.
+
+Exemplo:
+
+    for (int i = 0; i < contas.size(); i++) {
+        contas.get(i); // código não muito útil....
+    }
+
+------------------------------------------------
+remove()
+------------------------------------------------
+
+que recebe um objeto que se deseja remover da lista
+
+------------------------------------------------
+contains()
+------------------------------------------------
+
+recebe um objeto como argumento e devolve true ou false, indicando se o elemento está ou não na lista.
+
+Exemplo:
+
+public boolean estaMatriculado(Aluno aluno){
+return this.alunos.contains(aluno);
+}
+
+
+=============
+26/09/2017
+=============
+
+------------------------------------------------
+Ordenação: Collections.sort
+------------------------------------------------
+
+Faz a ordenação das informações de uma lista.
+
+Exemplo:
+
+   List<String> lista = new ArrayList<>();
+   lista.add("Sérgio");
+   lista.add("Paulo");
+   lista.add("Guilherme");
+
+   // repare que o toString de ArrayList foi sobrescrito:
+   System.out.println(lista); 
+
+   Collections.sort(lista);
+
+   System.out.println(lista);
+
+Ao testar o exemplo acima, você observará que, primeiro, a lista é impressa na ordem de inserção e, 
+depois de invocar o sort, ela é impressa em ordem alfabética.
+
+o critério de ordenação fica totalmente a critério de escolha do programador.
+
+Outros métodos da classe "Collections":
+- max(Collection): Retorna o maior elemento da coleção.
+- min(Collection): Retorna o menor elemento da coleção.
+- reverse(List): Inverte a lista.
+
+------------------------------------------------
+Threads 
+------------------------------------------------
+
+utiliza-se Threads para executar mais de um processo em paralelo ao mesmo tempo durante a execução de um programa.
+
+=============
+05/10/2017
+=============
+
+*================================================================================*
+Curso - Java: Dominando as Collections
+*================================================================================*
+
+*--------------------------------------------------------------------------------*
+TRABALHANDO COM ARRAYLIST
+*--------------------------------------------------------------------------------*
+
+ArrayLista serve para guardar uma lista de objetos.
+
+//criar uma ArrayList de String
+ArrayList<String> aulas = new ArrayList<>();
+
+//criar uma String para adicionar na ArrayList
+String aula1 = "Conhecendo mais de listas";
+String aula2 = "Modelando a classe Aula";
+String aula3 = "Trabalhando com Cursos e Sets";
+
+//adicionar Strings na ArrayList
+aulas.add(aula1);
+
+//remover Strings da ArrayList através de um índice conhecido da String que deseja-se remover
+aulas.remove(0);
+
+------------------------------------------------
+laço for foreach
+------------------------------------------------
+
+a palavra reservada "foreach" não existe no java,
+mas esse é o modo como é conhecido o laço for descrito abaixo, utilizado para Arrays:
+
+for (String aula : aulas) {
+System.out.println(aula);
+}
+
+esse laço for pode ser lido da seguinte maneira:
+"Para cada 'String' 'aula' dentro da Arraylist 'aulas', faça o que estiver dentro do laço".
+
+------------------------------------------------------------------
+Método foreatch()
+------------------------------------------------------------------
+
+o método foreatch() tem o funcionamento parecido com o laço for foreatch visto acima,
+porém é um método que pode ser utilizado sem a necessidade de fazer o laço for foreatch.
+
+Exemplo:
+
+aulas.forEach(aula -> {
+ System.out.println("Percorrendo");
+ System.out.println("Aula " + aula);			
+});
+
+
+------------------------------------------------------------------
+obtendo uma string de uma posição específica dentro da Arraylist
+------------------------------------------------------------------
+
+//obter a posição 0 da ArrayList 'aulas' e move para a variável 'primeiraAula'
+String primeiraAula = aulas.get(0);
+System.out.println("A primeira aula é: " + primeiraAula);
+
+------------------------------------------------------------------
+obter a quantidade de objetos de uma ArrayList
+------------------------------------------------------------------
+
+//percorrer uma arrayList até o tamanho total da lista
+//o método "size()" obtém a quantidade total de objetos (tamanho) da ArrayList
+for (int i = 0; i < aulas.size(); i++) {
+  System.out.println("For - aula: " + aulas.get(i));
+}
+
+------------------------------------------------------------------
+ordenar uma ArrayList de Strings
+------------------------------------------------------------------
+
+para ordenar os objetos de uma ArrayList de Strings utilizamos o método abaixo:
+esse método só funciona com ArrayList de Strings, não funciona para outro tipo de objeto.
+
+//onde 'aulas' é a ArrayList a ser ordenada
+Collections.sort(aulas);
+
+------------------------------------------------------------------
+ordenar uma ArrayList de objetos 
+------------------------------------------------------------------
+
+Para ordenar uma ArrayList que não seja de Strings, precisamos informar como queremos ordená-la,
+para isso precisamos reescrever o método "compareTo":
+
+Exemplo 1:
+
+//reescrevendo o método 'compareTo' implementado da classe "Comparable"
+//para que a ordenação dos objetos da classe Aula, seja por ordem alfabética do "título" da classe
+@Override
+public int compareTo(Aula outraAula) {
+ return this.titulo.compareTo(outraAula.titulo);
+
+Exemplo 2:
+
+//ordenando os objetos pelo atributo 'tempo' da classe Aula
+//as duas linhas abaixo fazem a mesma coisa
+Collections.sort(aulas, Comparator.comparing(Aula::getTempo));
+aulas.sort(Comparator.comparing(Aula::getTempo));
+
+------------------------------------------------------------------
+ArrayList ou LinkedList??
+------------------------------------------------------------------
+
+A diferença entre ArrayList e LinkedList é apenas performance.
+
+ArrayList é mais rápida para pesquisar um objeto em uma posição específica de uma lista,
+mas é mais lenta para inserir ou remover objetos em uma posição que não seja no fim da lista,
+ou seja, no início ou meio da lista.
+
+LinkedLista é mais rápida para inserir ou remover objetos no início ou meio da lista,
+mas é mais lenta para pesquisar um objeto de uma posição específica da lista.
+
+
+=============
+09/10/2017
+=============
+
+*--------------------------------------------------------------------------------*
+ainda dentro do Curso - Java: Dominando as Collections
+*--------------------------------------------------------------------------------*
+
+------------------------------------------------------------------
+Set (conjunto)
+------------------------------------------------------------------
+
+Set, do inglês conjunto, é uma coleção que guarda um conjunto de objetos, parecido com o 'list', mas com algumas diferenças bastante importantes:
+- A principal diferença é a performance, o conjunto 'set' é muito mais rápido do que 'list';
+- A ordem dos objetos do conjunto não é igual a ordem que os objetos foram inseridos;
+- No 'Set' não é possível inserir objetos duplicados;
+
+Exemplo:
+
+//criando um set de alunos
+Set<String> alunos = new HashSet<>();
+//adicionando um aluno ao set (conjunto) alunos
+alunos.add("Rodrigo Turini");
+
+
+A coleção 'Set' é utilizada principalmente quando temos muitos objetos e fazemos buscas constantes entres esses objetos,
+pois a velocidade de acesso é muito mais rápido que em uma coleção 'List'.
+
+------------------------------------------------------------------
+equals e hashcode
+------------------------------------------------------------------
+
+O método 'equals' é o que define se um objeto é igual a outro,
+por padrão ele compara dois objetos, mas esse método pode ser reescrito para comparar atributos de objetos,
+que no caso de serem iguais, torna os objetos iguais do ponto de vista do sistema desenvolvido.
+
+'hashcode' é um número único de um objeto, utilizado para diferenciá-lo de todos os demais objetos.
+
+IMPORTANTE: 
+sempre que o método 'equals' for reescrito, o método 'hashcode' também deve ser.
+
+Exemplo:
+
+	//reescrevendo o método 'equals'
+	@Override
+	public boolean equals(Object obj) {
+		Aluno outro = (Aluno) obj; 
+		return this.nome.equals(outro.nome);
+	}
+
+	//reescrevendo o método 'hashCode'	
+	@Override
+	public int hashCode() {
+		return this.nome.hashCode();
+	}
+
+------------------------------------------------------------------
+Diferença entre Collection e Collections
+------------------------------------------------------------------
+
+Collection.
+é uma interface com vários métodos utilizados para tratar conjuntos de objetos.
+
+Collections.
+as classes java.util.Collections e java.util.Arrays (repare o "s" no final) são utilitárias que possuem métodos auxiliares para trabalhar com coleções e arrays. 
+Por exemplo, já vimos o método Collections.sort(...).
+
+=============
+10/10/2017
+=============
+
+------------------------------------------------------------------
+Map
+------------------------------------------------------------------
+
+'Map' é uma interface utilizada para trabalhar com associações de informações,
+por exemplo, dado um número de matrícula, teremos um aluno associado correspondente a essa matrícula.
+'Map' não é uma implementação de 'CCollection', ela é uma interface por si só.
+
+As implementações de Map mais utilizadas: 
+
+1. HashMap.
+
+Exemplo:
+
+    private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
+    // restante do código
+
+2. LinkedHashMap.
+bastante parecido com o LinkedHashSet, que guarda a ordem de inserção.
+
+O método utilizado para adicionar um elemento em um 'Map' é o método 'put'. Ele recebe dois parâmetros, a chave e o valor. 
+Os tipos desses parâmetros dependem do que definimos na hora da instância do objeto. 
+Por exemplo, abaixo criamos um Map que recebe como chave a matrícula do aluno e como valor o seu nome:
+
+Exemplo:
+Map<Integer, String> matriculaParaAluno = new HashMap<>();
+matriculaParaAluno.put(123456, "Leonardo Cordeiro");
+
+------------------------------------------------------------------
+Resumo do Curso - Java: Dominando as Collections
+------------------------------------------------------------------
+
+as principais interfaces de Collections para se trabalhar com listas de informações, são:
+- List
+- set
+- Map
+
+*================================================================================*
+Curso - Java 8 - Tire proveito dos novos recursos da linguagem
+*================================================================================*
+
+------------------------------------------------------------------
+default method
+------------------------------------------------------------------
+
+Desde o Java 8, uma interface pode ter métodos concretos.
+Com isso, suas implementações não são obrigadas a reescrevê-los.
+Esse novo recurso é conhecido como 'default method'.
+
+Basta adicionar a palavra reservada default no início da
+declaração de um método de interface para que ele possa ter
+código implementado.
+
+Exemplo:
+
+public interface Promocional {
+  boolean aplicaDescontoDe(double porcentagem);
+
+  default boolean aplicaDescontoDe10Porcento() {
+    return aplicaDescontoDe(0.1);
+  }
+}
+
+Dessa forma, toda classe que implementar a interface
+Promocional terá um novo método aplicaDescontoDe10Porcento, 
+sem a obrigação de implementar nenhuma linha de código.
+
+------------------------------------------------------------------
+INTERFACE FUNCIONAL
+------------------------------------------------------------------
+
+A partir do Java 8, as interfaces que tem um único método abstrato em sua estrutura,
+(podendo ter ou não algum outro método default ou concreto) são chamadas de "INTERFACE FUNCIONAL.
+
+podemos ter um ou mais "default methods" declarados em nossa interface, 
+e isso não influencia o fato de ela ser ou não uma interface funcional. 
+Apenas métodos abstratos são considerados.
+
+------------------------------------------------------------------
+lambda
+------------------------------------------------------------------
+
+classes anônimas, são usadas com frequência para implementar listeners e callbacks que não terão reaproveitamento.
+
+O 'lambda' serve para substituir a criação dessas classes anônimas sem reaproveitamento.
+
+para utilizar o lambda, basta declarar os argumentos e o bloco a ser executado, separados por '->'
+
+Exemplo:
+
+palavras.forEach((String s) -> {
+    System.out.println(s);
+});
+
+que é equivalente a:
+
+palavras.forEach((s) -> {
+    System.out.println(s);
+});
+
+que é equivalente a:
+
+palavras.forEach(s -> {
+    System.out.println(s);
+});
+
+que é equivalente a:
+
+palavras.forEach(s -> System.out.println(s));
+
+------------------------------------------------------------------
+Method reference
+------------------------------------------------------------------
+
+É muito comum escrevermos lambdas curtos, que simplesmente invocam um único método. 
+É o exemplo de "s -> s.length()". Dada uma String, invoque e retorne o método length. 
+Por esse motivo, há uma forma de escrever esse tipo de lambda de uma forma ainda mais reduzida. Em vez de fazer:
+
+palavras.sort(Comparator.comparing(s -> s.length()));
+
+Fazemos uma referência ao método (method reference):
+
+palavras.sort(Comparator.comparing(String::length));
+
+São equivalentes nesse caso (acima)!
+
+Vamos ver melhor a semelhança entre um lambda e seu method reference equivalente. Veja as duas declarações a seguir:
+Elas ambas geram a mesma função: dada um String, invoca o método length e devolve este Integer. As duas serão avaliadas/resolvidas (evaluated) para Functions equivalentes.
+
+Function<String, Integer> funcao1 = s -> s.length();
+Function<String, Integer> funcao2 = String::length;
+
+=============
+11/10/2017
+=============
+
+------------------------------------------------------------------
+streams
+------------------------------------------------------------------
+
+'stream' é uma interface utilizada para trabalhar com filtros de coleções de objetos.
+
+pode-se pegar um 'Stream' de uma coleção simplesmente invocando cursos.stream() (onde 'cursos' é uma coleção de objeto curso).
+
+Exemplo:
+
+Stream<Curso> streamDeCurso = cursos.stream();
+
+Alguns métodos do 'stream':
+- filter
+  utilizado para filtrar os objetos desejados em uma coleção.
+
+Exemplo:
+
+Stream<Curso> streamDeCurso = cursos.stream().filter(c -> c.getAlunos() > 100);
+
+- map
+  devolve a quantidade de objetos do filtro desejado.
+
+Exemplo:
+
+cursos.stream()
+   .filter(c -> c.getAlunos() > 100)
+   .map(c -> c.getAlunos());
+   .forEach(x -> System.out.println(x));
+
+Stream não é uma List, não é uma Collection.
+
+IMPORTANTE:
+"modificações em um stream não modificam a coleção/objeto que o gerou".
+
+Então, para gerar uma coleção através do resultado de um 'stream' 
+podemos utilizar o método 'collect', 
+que coleta elementos de um Stream para produzir um outro objeto, como uma coleção.
+
+O método Collect recebe um Collector, uma interface não tão trivial de se implementar. Podemos usar a classe Collectors (repare o s no final), cheio de factory methods que ajudam na criação de coletores. Um dos coletores mais utilizados é o retornado por Collectors.toList():
+
+Exemplo:
+
+List<Curso> resultados = cursos.stream()
+   .filter(c -> c.getAlunos() > 100)
+   .collect(Collectors.toList());
+
+------------------------------------------------------------------
+optional
+------------------------------------------------------------------
+
+Optional é uma importante nova classe do Java 8. É com ele que poderemos trabalhar de uma maneira mais organizada com possíveis valores null. 
+Em vez de ficar comparando if(algumaCoisa == null), o Optional já fornece uma série de métodos para nos ajudar nessas situações. 
+Por que o findAny utiliza esse recurso? Pois pode não haver nenhum curso com mais de 100 alunos! Nesse caso, o que seria retornado? null? uma exception?
+
+Vamos ver as vantagens de se trabalhar com Optional. Primeiro vamos atribuir o resultado do findAny a uma variável:
+
+Optional<Curso> optional = cursos.stream()
+   .filter(c -> c.getAlunos() > 100)
+   .findAny();
+
+Dado um Optional, podemos pegar seu conteúdo invocando o get. Ele vai devolver o Curso que queremos. Mas e se não houver nenhum? Uma exception será lançada.
+
+Curso curso = optional.get();
+Há métodos mais interessantes. O orElse diz que ele deve devolver o curso que existe dentro desse optional, ou então o que foi passado como argumento:
+
+Curso curso = optional.orElse(null);
+
+Nesse caso ou ele devolve o curso encontrado, ou null, caso nenhum seja encontrado. Mesmo assim, ainda não está tão interessante. Há como evitar tanto o null, quanto as exceptions, quanto os ifs. O método ifPresent executa um lambda (um Consumer) no caso de existir um curso dentro daquele optional:
+
+Curso curso = optional.ifPresent(c -> System.out.println(c.getNome()))
+
+
+------------------------------------------------------------------
+API de datas
+------------------------------------------------------------------
+
+
+AQUI
+VOLTAR NO CURSO JAVA 8 E VER A ULTIMA AULA (A NOVA API DE DATAS)
+
+---------------------------------
+A ANOTAÇÃO @FunctionalInterface
+---------------------------------
+
+Podemos marcar uma interface como funcional explicitamente, 
+para que o fato de ela ser uma interface funcional
+não seja pela simples coincidência de ter um único método abstrato. 
+Para fazer isso, usamos a anotação "@FuncionalInterface".
+
+Exemplo:
+
+@FunctionalInterface
+public interface Promocional {
+  boolean aplicaDescontoDe(double porcentagem);
+
+  default boolean aplicaDescontoDe10Porcento() {
+    return aplicaDescontoDe(0.1);
+  }
+}
